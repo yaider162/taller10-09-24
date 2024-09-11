@@ -1,21 +1,21 @@
 package uptc.views.appointments.byNextVaccines;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.Table;
-import co.edu.uptc.views.wildCardClasses.CustomButton;
-import co.edu.uptc.views.wildCardClasses.Global;
 import lombok.Getter;
+import uptc.interfaces.Interfaces;
+import uptc.views.appointments.Table;
+import uptc.views.wildCardClasses.CustomButton;
+import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
 import java.awt.*;
 
 @Getter
 public class WorkByNextVaccineAppointments extends JPanel {
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
     private Table tableByDueDateVaccine;
     private CustomButton button;
 
-    public WorkByNextVaccineAppointments(VetInterface.Presenter presenter){
+    public WorkByNextVaccineAppointments(Interfaces.Presenter presenter){
         this.presenter = presenter;
         initWorkPanel();
     }

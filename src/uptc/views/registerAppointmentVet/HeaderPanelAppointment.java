@@ -90,10 +90,7 @@ public class HeaderPanelAppointment extends JPanel{
         button.addActionListener(e -> System.exit(0));
         headerLabelsPanel.add(button);
     }
-    private void createVaccines(){
-        MainAddVaccines mainAddVaccines = new MainAddVaccines(mainPageFrame, presenter);
-        mainAddVaccines.setVisible(true);
-    }
+
     private void createAppointments(){
         MainAllAppointments mainAppointments = new MainAllAppointments(mainPageFrame, presenter);
         mainAppointments.setVisible(true);

@@ -1,7 +1,9 @@
 package uptc.views.appointments.byNextVaccines;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.mainpage.MainPageFrame;
+
+
+import uptc.interfaces.Interfaces;
+import uptc.views.mainpage.MainPageFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +12,9 @@ import java.awt.event.ActionListener;
 
 public class MainByNextVaccineAppointments extends JDialog {
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public MainByNextVaccineAppointments(MainPageFrame mainPageFrame, VetInterface.Presenter presenter){
+    public MainByNextVaccineAppointments(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;

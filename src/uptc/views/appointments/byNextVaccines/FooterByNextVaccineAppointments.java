@@ -1,13 +1,11 @@
 package uptc.views.appointments.byNextVaccines;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.allAppointments.MainAllAppointments;
-import co.edu.uptc.views.appointments.byDate.MainByDateAppointments;
-import co.edu.uptc.views.appointments.byParent.MainByParentAppointments;
-import co.edu.uptc.views.appointments.byWeight.MainByWeightAppointments;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.LabelHeader;
+
+
+import uptc.interfaces.Interfaces;
+import uptc.views.mainpage.MainPageFrame;
+import uptc.views.wildCardClasses.Global;
+import uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,9 +15,9 @@ import java.awt.event.MouseEvent;
 public class FooterByNextVaccineAppointments extends JPanel {
     private final MainPageFrame mainPageFrame;
     private final JDialog parent;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public FooterByNextVaccineAppointments(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenter) {
+    public FooterByNextVaccineAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
         this.mainPageFrame = mainPageFrame;
         this.parent = parent;
         this.presenter = presenter;
