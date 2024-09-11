@@ -1,12 +1,12 @@
 package uptc.views.registerAppointmentVet;
 
-import uptc.interfaces.Interfaces;
-import uptc.views.addVaccines.MainAddVaccines;
-import uptc.views.appointments.allAppointments.MainAllAppointments;
-import uptc.views.mainpage.MainPageFrame;
-import uptc.views.wildCardClasses.CustomButton;
-import uptc.views.wildCardClasses.Global;
-import uptc.views.wildCardClasses.LabelHeader;
+import co.edu.uptc.interfaces.VetInterface;
+import co.edu.uptc.views.addVaccines.MainAddVaccines;
+import co.edu.uptc.views.appointments.allAppointments.MainAllAppointments;
+import co.edu.uptc.views.mainpage.MainPageFrame;
+import co.edu.uptc.views.wildCardClasses.CustomButton;
+import co.edu.uptc.views.wildCardClasses.Global;
+import co.edu.uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,9 +18,9 @@ public class HeaderPanelAppointment extends JPanel{
     private JPanel titlePanel;
     private final JDialog parent;
     private final MainPageFrame mainPageFrame;
-    private final Interfaces.Presenter presenter;
+    private final VetInterface.Presenter presenter;
 
-    public HeaderPanelAppointment(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+    public HeaderPanelAppointment(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenter){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
