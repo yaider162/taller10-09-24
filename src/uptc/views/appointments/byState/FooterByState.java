@@ -54,7 +54,7 @@ public class FooterByState extends JPanel {
         gridPanel.add(orderBy);
     }
     private void createTitle2(JPanel gridPanel){
-        JLabel date = new LabelHeader("Registros Por Estado");
+        JLabel date = new LabelHeader("Todos");
         date.setFont(Global.FONT_TEXTS);
         date.setForeground(Global.FOOTER_TEXT_COLOR);
         date.addMouseListener(new MouseAdapter() {
