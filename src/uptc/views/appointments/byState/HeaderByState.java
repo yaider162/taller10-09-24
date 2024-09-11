@@ -1,23 +1,25 @@
-package uptc.views.appointments.byWeight;
+package uptc.views.appointments.byState;
 
-import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
-import uptc.views.wildCardClasses.CustomButton;
 import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
+import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import  uptc.views.wildCardClasses.*;
 
-public class HeaderByWeightVaccineAppointments extends JPanel {
+public class HeaderByState extends JPanel {
+    private final MainPageFrame mainPageFrame;
     private JPanel headerLabelsPanel;
     private JPanel titlePanel;
     private final JDialog parent;
-    private final MainPageFrame mainPageFrame;
     private final Interfaces.Presenter presenter;
-    public HeaderByWeightVaccineAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+
+    public HeaderByState(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
@@ -48,7 +50,7 @@ public class HeaderByWeightVaccineAppointments extends JPanel {
         this.add(headerLabelsPanel, BorderLayout.CENTER);
     }
     private void createLabelViewDates(){
-        JLabel label =  new LabelHeader("Añadir Vacunas");
+        JLabel label =  new LabelHeader("Analisis geograficos");
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

@@ -1,12 +1,9 @@
-package uptc.views.appointments.byNextVaccines;
-
-
+package uptc.views.appointments.byCity;
 
 import uptc.interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
-import uptc.views.appointments.byDate.MainByDateAppointments;
-import uptc.views.appointments.byParent.MainByParentAppointments;
-import uptc.views.appointments.byWeight.MainByWeightAppointments;
+import uptc.views.appointments.byState.MainByState;
+import uptc.views.appointments.byCountry.MainByParentAppointments;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -48,22 +45,8 @@ public class FooterByNextVaccineAppointments extends JPanel {
         createTitle2(gridPanel);
         createTitle3(gridPanel);
         createTitle4(gridPanel);
-        createTitle5(gridPanel);
     }
 
-    private void createTitle5(JPanel gridPanel) {
-        JLabel all = new LabelHeader("Por peso");
-        all.setFont(Global.FONT_TEXTS);
-        all.setForeground(Global.FOOTER_TEXT_COLOR);
-        all.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-                createByWeight();
-            }
-        });
-        gridPanel.add(all);
-    }
 
     private void createTitle1(JPanel gridPanel){
         JLabel orderBy = new LabelHeader("Ordernar por: ");
@@ -85,7 +68,7 @@ public class FooterByNextVaccineAppointments extends JPanel {
         gridPanel.add(all);
     }
     private void createTitle3(JPanel gridPanel){
-        JLabel date = new LabelHeader("Fecha");
+        JLabel date = new LabelHeader("Registros Por Condado");
         date.setFont(Global.FONT_TEXTS);
         date.setForeground(Global.FOOTER_TEXT_COLOR);
         date.addMouseListener(new MouseAdapter() {
@@ -98,7 +81,7 @@ public class FooterByNextVaccineAppointments extends JPanel {
         gridPanel.add(date);
     }
     private void createTitle4(JPanel gridPanel) {
-        JLabel responsible = new LabelHeader("Responsable");
+        JLabel responsible = new LabelHeader("Registros Por Estado");
         responsible.setFont(Global.FONT_TEXTS);
         responsible.setForeground(Global.FOOTER_TEXT_COLOR);
         responsible.addMouseListener(new MouseAdapter() {
@@ -115,15 +98,12 @@ public class FooterByNextVaccineAppointments extends JPanel {
         mainAllAppointments.setVisible(true);
     }
     private void createByDateAppointments(){
-        MainByDateAppointments mainByDateAppointments = new MainByDateAppointments(mainPageFrame, presenter);
+        MainByState mainByDateAppointments = new MainByState(mainPageFrame, presenter);
         mainByDateAppointments.setVisible(true);
     }
     private void createByResponsible(){
         MainByParentAppointments mainByResponsibleAppointments = new MainByParentAppointments(mainPageFrame, presenter);
         mainByResponsibleAppointments.setVisible(true);
     }
-    private void createByWeight(){
-        MainByWeightAppointments mainByWeightAppointments = new MainByWeightAppointments(mainPageFrame, presenter);
-        mainByWeightAppointments.setVisible(true);
-    }
+
 }

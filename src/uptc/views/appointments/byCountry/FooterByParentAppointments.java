@@ -1,9 +1,10 @@
-package uptc.views.appointments.byWeight;
+package uptc.views.appointments.byCountry;
+
 
 import uptc.interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
-import uptc.views.appointments.byDate.MainByDateAppointments;
-import uptc.views.appointments.byParent.MainByParentAppointments;
+import uptc.views.appointments.byState.MainByState;
+import uptc.views.appointments.byCity.MainByNextVaccineAppointments;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -13,15 +14,15 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class FooterByWeightAppointments extends JPanel {
+public class FooterByParentAppointments extends JPanel {
     private final MainPageFrame mainPageFrame;
     private final JDialog parent;
-    private final Interfaces.Presenter presenter;
+    private final Interfaces.Presenter presenterVet;
 
-    public FooterByWeightAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
-        this.mainPageFrame = mainPageFrame;
+    public FooterByParentAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet) {
         this.parent = parent;
-        this.presenter = presenter;
+        this.mainPageFrame = mainPageFrame;
+        this.presenterVet = presenterVet;
         initPanel();
     }
     private void initPanel() {
@@ -45,19 +46,6 @@ public class FooterByWeightAppointments extends JPanel {
         createTitle2(gridPanel);
         createTitle3(gridPanel);
         createTitle4(gridPanel);
-        createTitle5(gridPanel);
-    }
-    private void createTitle5(JPanel gridPanel){
-        JLabel all = new LabelHeader("Por proximas a Vacuna");
-        all.setFont(Global.FONT_TEXTS);
-        all.setForeground(Global.FOOTER_TEXT_COLOR);
-        all.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-            }
-        });
-        gridPanel.add(all);
     }
 
 
@@ -94,28 +82,30 @@ public class FooterByWeightAppointments extends JPanel {
         gridPanel.add(date);
     }
     private void createTitle4(JPanel gridPanel) {
-        JLabel responsible = new LabelHeader("Responsable");
-        responsible.setFont(Global.FONT_TEXTS);
-        responsible.setForeground(Global.FOOTER_TEXT_COLOR);
-        responsible.addMouseListener(new MouseAdapter() {
+        JLabel petsNext = new LabelHeader("Mascotas Proximas a Vacuna");
+        petsNext.setFont(Global.FONT_TEXTS);
+        petsNext.setForeground(Global.FOOTER_TEXT_COLOR);
+        petsNext.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByResponsible();
+                createByNextVaccineAppointments();
             }
         });
-        gridPanel.add(responsible);
+        gridPanel.add(petsNext);
     }
     private void createAllAppointments(){
-        MainAll mainAllAppointments = new MainAll(mainPageFrame, presenter);
+        MainAll mainAllAppointments = new MainAll(mainPageFrame, presenterVet);
         mainAllAppointments.setVisible(true);
     }
     private void createByDateAppointments(){
-        MainByDateAppointments mainByDateAppointments = new MainByDateAppointments(mainPageFrame, presenter);
+        MainByState mainByDateAppointments = new MainByState(mainPageFrame, presenterVet);
         mainByDateAppointments.setVisible(true);
     }
-    private void createByResponsible(){
-        MainByParentAppointments mainByResponsibleAppointments = new MainByParentAppointments(mainPageFrame, presenter);
-        mainByResponsibleAppointments.setVisible(true);
+    private void createByNextVaccineAppointments(){
+        MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenterVet);
+        mainByNextVaccineAppointments.setVisible(true);
+
     }
+
 }

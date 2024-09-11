@@ -2,6 +2,7 @@ package uptc.views.appointments.allAppointments;
 
 import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
+import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -25,7 +26,6 @@ public class HeaderAll extends JPanel {
         initComponents();
         createPanelHeaderLabels();
         createLabelAddVaccines();
-        createLabelViewDates();
         createTitlePanel();
         createLblTitle();
         createButtonExit();
@@ -48,23 +48,14 @@ public class HeaderAll extends JPanel {
         headerLabelsPanel.setBackground(Global.HEADER_BACKGROUND_COLOR);
         this.add(headerLabelsPanel, BorderLayout.CENTER);
     }
-    private void createLabelViewDates(){
-        JLabel label =  new LabelHeader("Añadir Vacunas");
-        label.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-            }
-        });
-        headerLabelsPanel.add(label);
-    }
+
     private void createLabelAddVaccines(){
-        JLabel label =  new LabelHeader("Registrar Cita");
+        JLabel label =  new LabelHeader("Analisis Geograficos");
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-//                createRegister();
+                createRegister();
             }
         });
         headerLabelsPanel.add(label);
@@ -76,7 +67,7 @@ public class HeaderAll extends JPanel {
         this.add(titlePanel, BorderLayout.WEST);
     }
     private void createLblTitle(){
-        JLabel label = new JLabel("Veterinaria");
+        JLabel label = new JLabel("Analisis Por Vehiculo");
         titlePanel.add(Box.createHorizontalStrut(50));
         label.setFont(Global.FONT_TITLE_NORMAL);
         label.setForeground(Global.HEADER_TEXT_COLOR);
@@ -87,8 +78,8 @@ public class HeaderAll extends JPanel {
         button.addActionListener(e -> System.exit(0));
         headerLabelsPanel.add(button);
     }
-//    private void createRegister(){
-//        RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenter);
-//        registerAppointmentMainPage.setVisible(true);
-//    }
+    private void createRegister(){
+        RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenter);
+        registerAppointmentMainPage.setVisible(true);
+    }
 }

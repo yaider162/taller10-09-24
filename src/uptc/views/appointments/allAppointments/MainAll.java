@@ -1,4 +1,4 @@
-package uptc.views.appointments.allAppointments;
+    package uptc.views.appointments.allAppointments;
 
 import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;

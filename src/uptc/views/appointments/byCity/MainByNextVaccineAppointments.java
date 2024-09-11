@@ -1,16 +1,20 @@
-package uptc.views.appointments.byDate;
+package uptc.views.appointments.byCity;
+
+
 
 import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainByDateAppointments extends JDialog {
+public class MainByNextVaccineAppointments extends JDialog {
     private final MainPageFrame mainPageFrame;
     private final Interfaces.Presenter presenter;
-    public MainByDateAppointments(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+
+    public MainByNextVaccineAppointments(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
@@ -34,15 +38,15 @@ public class MainByDateAppointments extends JDialog {
         return new Dimension((int)width, (int)height);
     }
     private void createFooter() {
-        FooterByDateAppointments footerAllAppointments = new FooterByDateAppointments(this, mainPageFrame, presenter);
+        FooterByNextVaccineAppointments footerAllAppointments = new FooterByNextVaccineAppointments(this, mainPageFrame, presenter);
         add(footerAllAppointments, BorderLayout.SOUTH);
     }
     private void createWork() {
-        WorkByDateAppointments workAllApointments = new WorkByDateAppointments(presenter);
+        WorkByNextVaccineAppointments workAllApointments = new WorkByNextVaccineAppointments(presenter);
         add(workAllApointments, BorderLayout.CENTER);
     }
     private void createHeader() {
-        HeaderByDateAppointments headerAllAppointments = new HeaderByDateAppointments(this, mainPageFrame, presenter);
+        HeaderByNextVaccineAppointments headerAllAppointments = new HeaderByNextVaccineAppointments(this, mainPageFrame, presenter);
         add(headerAllAppointments, BorderLayout.NORTH);
     }
     private void fadeIn() {

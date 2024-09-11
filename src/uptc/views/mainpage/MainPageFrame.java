@@ -20,7 +20,7 @@ public class MainPageFrame extends JFrame implements Interfaces.View {
     }
 
     private void initComponents(){
-        this.setTitle("Veterinaria");
+        this.setTitle("Registro de Vehiculos Electricos");
         this.setUndecorated(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());

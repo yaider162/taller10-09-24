@@ -26,12 +26,12 @@ public class WorkPanel extends JPanel {
     }
     private void createLabelAndButton(){
         add(Box.createVerticalGlue());
-        JLabel label = new JLabel("Registrar Cita");
+        JLabel label = new JLabel("Analisis Por Vehiculo");
         label.setFont(Global.FONT_TITLE_BIG);
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(label);
         add(Box.createVerticalStrut(50));
-        CustomButton button = new CustomButton("Registrar");
+        CustomButton button = new CustomButton("Buscar");
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         button.addActionListener(e -> registerAppointment());
         add(button);

@@ -1,35 +1,34 @@
-package uptc.views.appointments.byWeight;
+package uptc.views.appointments.byCountry;
+
 
 import uptc.interfaces.Interfaces;
-import uptc.views.appointments.Table;
-import uptc.views.wildCardClasses.Global;
-import uptc.views.wildCardClasses.CustomButton;
-import uptc.views.wildCardClasses.*;
 import lombok.Getter;
+import uptc.views.appointments.Table;
+import uptc.views.wildCardClasses.NumericTextField;
+import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
 import java.awt.*;
 
 @Getter
-public class WorkByWeightAppointments extends JPanel {
-    private final Interfaces.Presenter presenter;
-    private Table tableByDueDateVaccine;
-    private CustomButton button;
+public class WorkByParentAppointments extends JPanel {
+    private final Interfaces.Presenter presenterVet;
+    private Table tableByPhoneNumber;
     private NumericTextField numericTextField;
 
-    public WorkByWeightAppointments(Interfaces.Presenter presenter){
-        this.presenter = presenter;
+    public WorkByParentAppointments(Interfaces.Presenter presenterVet){
+        this.presenterVet = presenterVet;
         initWorkPanel();
     }
     private void initWorkPanel() {
-        tableByDueDateVaccine = new Table();
+        tableByPhoneNumber = new Table();
         setBackground(Global.WORK_BACKGROUND_COLOR);
         setForeground(Global.WORK_TEXT_COLOR);
         createTitle();
         createTable();
     }
     private void createTable() {
-        JScrollPane scrollPane = new JScrollPane(tableByDueDateVaccine.getTable());
+        JScrollPane scrollPane = new JScrollPane(tableByPhoneNumber.getTable());
         scrollPane.setPreferredSize(obtainSizeForTable());
         add(scrollPane, BorderLayout.CENTER);
     }
@@ -39,26 +38,12 @@ public class WorkByWeightAppointments extends JPanel {
         subHeaderPanel.setLayout(new BoxLayout(subHeaderPanel, BoxLayout.X_AXIS));
         subHeaderPanel.setPreferredSize(obtainSizeForSubHeader());
         createTitle(subHeaderPanel);
-        createButtonOrganize(subHeaderPanel);
-        createNumericTextFieldForWeight(subHeaderPanel);
+        createTextField(subHeaderPanel);
         add(subHeaderPanel, BorderLayout.NORTH);
     }
-    private void createButtonOrganize(JPanel panel){
-        button = new CustomButton("↑↓(Por encima o Igual)");
-        button.addActionListener(e -> {
-            if (button.getText().equals("↑↓(Por encima o Igual)")) {
-                button.setText("↓↑(Por debajo)");
-            }
-            else {
-                button.setText("↑↓(Por encima o Igual)");
-            }
-            setData();
-        });
-        panel.add(button);
-    }
-    private void createNumericTextFieldForWeight(JPanel panel){
-        numericTextField = new NumericTextField("Ingrese el peso en gramos");
-        numericTextField.setPreferredSize(new Dimension(100, 30));
+    private void createTextField(JPanel panel) {
+        numericTextField = new NumericTextField("Numero telefonico del responsable:");
+        numericTextField.addActionListener(e -> setData());
         panel.add(numericTextField);
     }
     private void createTitle(JPanel panel){
@@ -82,16 +67,8 @@ public class WorkByWeightAppointments extends JPanel {
     }
 
     public void setData() {
-        presenter.getDataAndSetData();
-        Object[][] newData;
-        if (button.getText().equals("↑↓(Por encima o Igual)")) {
-            newData = presenter.obtainVisitsUpWeight(Integer.parseInt(numericTextField.getText()));
-        } else {
-            newData = presenter.obtainVisitsDownWeight(Integer.parseInt(numericTextField.getText()));
-        }
-        tableByDueDateVaccine.clearTable();
-        for (Object[] datum : newData) {
-            tableByDueDateVaccine.putData(datum);
+        for (Object[] object: presenterVet.obtainVisitsByPetParentPhoneNumber(Long.parseLong(numericTextField.getText()))){
+            tableByPhoneNumber.putData(object);
         }
     }
 }

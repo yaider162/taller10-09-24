@@ -1,4 +1,4 @@
-package uptc.views.appointments.byNextVaccines;
+package uptc.views.appointments.byCity;
 
 import uptc.interfaces.Interfaces;
 import lombok.Getter;
@@ -54,7 +54,7 @@ public class WorkByNextVaccineAppointments extends JPanel {
         panel.add(button);
     }
     private void createTitle(JPanel panel){
-        JLabel title = new JLabel("Citas por Proximas a Vacuna: ");
+        JLabel title = new JLabel("Registros Por Ciudad: ");
         title.setFont(Global.FONT_TITLE_BIG);
         title.setForeground(Global.WORK_TEXT_COLOR);
         title.setLayout(new FlowLayout(FlowLayout.LEFT));

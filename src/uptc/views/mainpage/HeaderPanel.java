@@ -47,7 +47,7 @@ public class HeaderPanel extends JPanel{
         this.add(headerLabelsPanel, BorderLayout.CENTER);
     }
     private void createLabelViewDates(){
-        JLabel label =  new LabelHeader("Ver Citas");
+        JLabel label =  new LabelHeader("Analisis Geograficos");
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -64,7 +64,7 @@ public class HeaderPanel extends JPanel{
         this.add(titlePanel, BorderLayout.WEST);
     }
     private void createLblTitle(){
-        JLabel label = new JLabel("Veterinaria");
+        JLabel label = new JLabel("Registro de Vehiculos Electricos");
         titlePanel.add(Box.createHorizontalStrut(50));
         label.setFont(Global.FONT_TITLE_NORMAL);
         label.setForeground(Global.HEADER_TEXT_COLOR);

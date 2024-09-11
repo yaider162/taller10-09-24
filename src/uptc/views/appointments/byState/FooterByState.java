@@ -1,11 +1,10 @@
-package uptc.views.appointments.byParent;
+package uptc.views.appointments.byState;
 
 
 import uptc.interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
-import uptc.views.appointments.byDate.MainByDateAppointments;
-import uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
-import uptc.views.appointments.byWeight.MainByWeightAppointments;
+import uptc.views.appointments.byCity.MainByNextVaccineAppointments;
+import uptc.views.appointments.byCountry.MainByParentAppointments;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -15,15 +14,15 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class FooterByParentAppointments extends JPanel {
-    private final MainPageFrame mainPageFrame;
+public class FooterByState extends JPanel {
     private final JDialog parent;
-    private final Interfaces.Presenter presenterVet;
+    private final MainPageFrame mainPageFrame;
+    private final Interfaces.Presenter presenter;
 
-    public FooterByParentAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet) {
-        this.parent = parent;
+    public FooterByState(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
         this.mainPageFrame = mainPageFrame;
-        this.presenterVet = presenterVet;
+        this.parent = parent;
+        this.presenter = presenter;
         initPanel();
     }
     private void initPanel() {
@@ -47,23 +46,7 @@ public class FooterByParentAppointments extends JPanel {
         createTitle2(gridPanel);
         createTitle3(gridPanel);
         createTitle4(gridPanel);
-        createTitle5(gridPanel);
     }
-
-    private void createTitle5(JPanel gridPanel) {
-        JLabel all = new LabelHeader("Por peso");
-        all.setFont(Global.FONT_TEXTS);
-        all.setForeground(Global.FOOTER_TEXT_COLOR);
-        all.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-                createByWeight();
-            }
-        });
-        gridPanel.add(all);
-    }
-
     private void createTitle1(JPanel gridPanel){
         JLabel orderBy = new LabelHeader("Ordernar por: ");
         orderBy.setFont(Global.FONT_TITLE_NORMAL);
@@ -71,7 +54,7 @@ public class FooterByParentAppointments extends JPanel {
         gridPanel.add(orderBy);
     }
     private void createTitle2(JPanel gridPanel){
-        JLabel all = new LabelHeader("Todos");
+        JLabel all = new LabelHeader("Ninguno");
         all.setFont(Global.FONT_TEXTS);
         all.setForeground(Global.FOOTER_TEXT_COLOR);
         all.addMouseListener(new MouseAdapter() {
@@ -84,46 +67,43 @@ public class FooterByParentAppointments extends JPanel {
         gridPanel.add(all);
     }
     private void createTitle3(JPanel gridPanel){
-        JLabel date = new LabelHeader("Fecha");
-        date.setFont(Global.FONT_TEXTS);
-        date.setForeground(Global.FOOTER_TEXT_COLOR);
-        date.addMouseListener(new MouseAdapter() {
+        JLabel petsNextTo = new LabelHeader("");
+        petsNextTo.setFont(Global.FONT_TEXTS);
+        petsNextTo.setForeground(Global.FOOTER_TEXT_COLOR);
+        petsNextTo.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByDateAppointments();
+                createNextVaccineAppointments();
             }
         });
-        gridPanel.add(date);
+        gridPanel.add(petsNextTo);
     }
     private void createTitle4(JPanel gridPanel) {
-        JLabel petsNext = new LabelHeader("Mascotas Proximas a Vacuna");
-        petsNext.setFont(Global.FONT_TEXTS);
-        petsNext.setForeground(Global.FOOTER_TEXT_COLOR);
-        petsNext.addMouseListener(new MouseAdapter() {
+        JLabel responsible = new LabelHeader("Responsable");
+        responsible.setFont(Global.FONT_TEXTS);
+        responsible.setForeground(Global.FOOTER_TEXT_COLOR);
+        responsible.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByNextVaccineAppointments();
+                createByParentAppointments();
             }
         });
-        gridPanel.add(petsNext);
+        gridPanel.add(responsible);
     }
     private void createAllAppointments(){
-        MainAll mainAllAppointments = new MainAll(mainPageFrame, presenterVet);
-        mainAllAppointments.setVisible(true);
+        MainAll mainAll = new MainAll(mainPageFrame, presenter);
+        mainAll.setVisible(true);
     }
-    private void createByDateAppointments(){
-        MainByDateAppointments mainByDateAppointments = new MainByDateAppointments(mainPageFrame, presenterVet);
-        mainByDateAppointments.setVisible(true);
-    }
-    private void createByNextVaccineAppointments(){
-        MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenterVet);
+    private void createNextVaccineAppointments(){
+        MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenter);
         mainByNextVaccineAppointments.setVisible(true);
+    }
+    private void createByParentAppointments(){
+        MainByParentAppointments mainByParentAppointments = new MainByParentAppointments(mainPageFrame, presenter);
+        mainByParentAppointments.setVisible(true);
+    }
 
-    }
-    private void createByWeight(){
-        MainByWeightAppointments mainByWeightAppointments = new MainByWeightAppointments(mainPageFrame, presenterVet);
-        mainByWeightAppointments.setVisible(true);
-    }
+
 }
