@@ -69,7 +69,7 @@ public class FooterByParentAppointments extends JPanel {
         gridPanel.add(all);
     }
     private void createTitle3(JPanel gridPanel){
-        JLabel date = new LabelHeader("Fecha");
+        JLabel date = new LabelHeader("Registros Por Estado");
         date.setFont(Global.FONT_TEXTS);
         date.setForeground(Global.FOOTER_TEXT_COLOR);
         date.addMouseListener(new MouseAdapter() {
@@ -82,7 +82,7 @@ public class FooterByParentAppointments extends JPanel {
         gridPanel.add(date);
     }
     private void createTitle4(JPanel gridPanel) {
-        JLabel petsNext = new LabelHeader("Mascotas Proximas a Vacuna");
+        JLabel petsNext = new LabelHeader("Registros Por Ciudad");
         petsNext.setFont(Global.FONT_TEXTS);
         petsNext.setForeground(Global.FOOTER_TEXT_COLOR);
         petsNext.addMouseListener(new MouseAdapter() {

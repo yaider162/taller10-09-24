@@ -4,7 +4,6 @@ package uptc.views.appointments.byCountry;
 import uptc.interfaces.Interfaces;
 import lombok.Getter;
 import uptc.views.appointments.Table;
-import uptc.views.wildCardClasses.NumericTextField;
 import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
@@ -14,7 +13,6 @@ import java.awt.*;
 public class WorkByParentAppointments extends JPanel {
     private final Interfaces.Presenter presenterVet;
     private Table tableByPhoneNumber;
-    private NumericTextField numericTextField;
 
     public WorkByParentAppointments(Interfaces.Presenter presenterVet){
         this.presenterVet = presenterVet;
@@ -38,16 +36,11 @@ public class WorkByParentAppointments extends JPanel {
         subHeaderPanel.setLayout(new BoxLayout(subHeaderPanel, BoxLayout.X_AXIS));
         subHeaderPanel.setPreferredSize(obtainSizeForSubHeader());
         createTitle(subHeaderPanel);
-        createTextField(subHeaderPanel);
         add(subHeaderPanel, BorderLayout.NORTH);
     }
-    private void createTextField(JPanel panel) {
-        numericTextField = new NumericTextField("Numero telefonico del responsable:");
-        numericTextField.addActionListener(e -> setData());
-        panel.add(numericTextField);
-    }
+
     private void createTitle(JPanel panel){
-        JLabel title = new JLabel("Citas por Proximas a Vacuna: ");
+        JLabel title = new JLabel("Registros Ordenados Por Condado: ");
         title.setFont(Global.FONT_TITLE_BIG);
         title.setForeground(Global.WORK_TEXT_COLOR);
         title.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -66,9 +59,4 @@ public class WorkByParentAppointments extends JPanel {
         return new Dimension((int)width, (int)height);
     }
 
-    public void setData() {
-        for (Object[] object: presenterVet.obtainVisitsByPetParentPhoneNumber(Long.parseLong(numericTextField.getText()))){
-            tableByPhoneNumber.putData(object);
-        }
-    }
 }
