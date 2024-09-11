@@ -28,3 +28,7 @@ Para ejecutar el archivo .jar se debe abrir una terminal y ejecutar el siguiente
 Yaider Alejandro Becerra Rojas 202310031
 
 Ian Martinez Torres 202311453
+
+## Comando Para Ejecucion
+
+ 

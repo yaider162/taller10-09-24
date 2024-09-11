@@ -74,7 +74,7 @@ public class FooterByState extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByParentAppointments();
+                createByNextVaccine();
             }
         });
         gridPanel.add(petsNextTo);
@@ -87,6 +87,7 @@ public class FooterByState extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
+                createByParentAppointments();
             }
         });
         gridpanel.add(responsible);
@@ -95,14 +96,16 @@ public class FooterByState extends JPanel {
         MainAll mainAll = new MainAll(mainPageFrame, presenter);
         mainAll.setVisible(true);
     }
-    private void createNextVaccineAppointments(){
-        MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenter);
-        mainByNextVaccineAppointments.setVisible(true);
-    }
+
     private void createByParentAppointments(){
         MainByParentAppointments mainByParentAppointments = new MainByParentAppointments(mainPageFrame, presenter);
         mainByParentAppointments.setVisible(true);
     }
+    private void createByNextVaccine(){
+        MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenter);
+        mainByNextVaccineAppointments.setVisible(true);
+    }
+
 
 
 }

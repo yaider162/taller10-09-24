@@ -1,5 +1,6 @@
 package uptc.views.appointments.allAppointments;
 
+import uptc.views.appointments.byCountry.MainByParentAppointments;
 import uptc.views.appointments.byState.MainByState;
 import uptc.views.appointments.byCity.MainByNextVaccineAppointments;
 import uptc.views.mainpage.MainPageFrame;
@@ -87,6 +88,7 @@ public class FooterAll extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
+                createByParentAppointments();
             }
         });
         gridpanel.add(responsible);
@@ -99,5 +101,9 @@ public class FooterAll extends JPanel {
     private void createByDateAppointments(){
         MainByState mainByDateAppointments = new MainByState(mainPageFrame, presenter);
         mainByDateAppointments.setVisible(true);
+    }
+    private void createByParentAppointments(){
+        MainByParentAppointments mainByParentAppointments = new MainByParentAppointments(mainPageFrame, presenter);
+        mainByParentAppointments.setVisible(true);
     }
 }

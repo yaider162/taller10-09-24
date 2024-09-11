@@ -75,7 +75,7 @@ public class FooterByNextVaccineAppointments extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByDateAppointments();
+                createByResponsible();
             }
         });
         gridPanel.add(date);
@@ -88,7 +88,7 @@ public class FooterByNextVaccineAppointments extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByResponsible();
+                createByDateAppointments();
             }
         });
         gridPanel.add(responsible);

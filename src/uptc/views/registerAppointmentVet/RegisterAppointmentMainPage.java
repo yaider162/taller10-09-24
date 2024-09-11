@@ -19,7 +19,7 @@ public class RegisterAppointmentMainPage extends JDialog {
         this.presenterVet = presenterVet;
         initComponents();
         createHeaderPanel();
-        //createWorkPanel();
+        createWorkPanel();
         this.setOpacity(0);
         fadeIn();
     }
@@ -43,12 +43,6 @@ public class RegisterAppointmentMainPage extends JDialog {
     }
     private void createWorkPanel(){
         WorkPanelAppointmentVet workPanelAppointmentVet = new WorkPanelAppointmentVet(this, presenterVet);
-//        workPanelAppointmentVet.setPetType(new CustomJComboBox(presenterVet.obtainPetTypes()));
-//        workPanelAppointmentVet.setVaccinesNum(new CustomJComboBox(new String[]{"1", "2", "3", "4"}));
-        if (presenterVet.obtainVaccinesName().length == 0){
-            JOptionPane.showMessageDialog(null,"Holi profe", "Error", JOptionPane.ERROR_MESSAGE);
-        }//else{ workPanelAppointmentVet.setVaccines(new CustomJComboBox(presenterVet.obtainVaccinesName()));
-
         workPanelAppointmentVet.buildPanel();
         add(workPanelAppointmentVet, BorderLayout.CENTER);
     }
