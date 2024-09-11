@@ -1,13 +1,14 @@
 package uptc.views.appointments.byParent;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.allAppointments.MainAllAppointments;
-import co.edu.uptc.views.appointments.byDate.MainByDateAppointments;
-import co.edu.uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
-import co.edu.uptc.views.appointments.byWeight.MainByWeightAppointments;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.LabelHeader;
+
+import interfaces.Interfaces;
+import uptc.views.appointments.allAppointments.MainAll;
+import uptc.views.appointments.byDate.MainByDateAppointments;
+import uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
+import uptc.views.appointments.byWeight.MainByWeightAppointments;
+import uptc.views.mainpage.MainPageFrame;
+import uptc.views.wildCardClasses.Global;
+import uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,9 +18,9 @@ import java.awt.event.MouseEvent;
 public class FooterByParentAppointments extends JPanel {
     private final MainPageFrame mainPageFrame;
     private final JDialog parent;
-    private final VetInterface.Presenter presenterVet;
+    private final Interfaces.Presenter presenterVet;
 
-    public FooterByParentAppointments(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenterVet) {
+    public FooterByParentAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet) {
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenterVet = presenterVet;
@@ -109,7 +110,7 @@ public class FooterByParentAppointments extends JPanel {
         gridPanel.add(petsNext);
     }
     private void createAllAppointments(){
-        MainAllAppointments mainAllAppointments = new MainAllAppointments(mainPageFrame, presenterVet);
+        MainAll mainAllAppointments = new MainAll(mainPageFrame, presenterVet);
         mainAllAppointments.setVisible(true);
     }
     private void createByDateAppointments(){

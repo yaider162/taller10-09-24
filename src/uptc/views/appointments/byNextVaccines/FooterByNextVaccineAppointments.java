@@ -2,7 +2,11 @@ package uptc.views.appointments.byNextVaccines;
 
 
 
-import uptc.interfaces.Interfaces;
+import interfaces.Interfaces;
+import uptc.views.appointments.allAppointments.MainAll;
+import uptc.views.appointments.byDate.MainByDateAppointments;
+import uptc.views.appointments.byParent.MainByParentAppointments;
+import uptc.views.appointments.byWeight.MainByWeightAppointments;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -107,7 +111,7 @@ public class FooterByNextVaccineAppointments extends JPanel {
         gridPanel.add(responsible);
     }
     private void createAllAppointments(){
-        MainAllAppointments mainAllAppointments = new MainAllAppointments(mainPageFrame, presenter);
+        MainAll mainAllAppointments = new MainAll(mainPageFrame, presenter);
         mainAllAppointments.setVisible(true);
     }
     private void createByDateAppointments(){

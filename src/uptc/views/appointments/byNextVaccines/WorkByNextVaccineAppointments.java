@@ -1,7 +1,7 @@
 package uptc.views.appointments.byNextVaccines;
 
+import interfaces.Interfaces;
 import lombok.Getter;
-import uptc.interfaces.Interfaces;
 import uptc.views.appointments.Table;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;

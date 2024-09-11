@@ -1,7 +1,7 @@
 package uptc.views.registerAppointmentVet;
 
 
-import uptc.interfaces.Interfaces;
+import interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.CustomButton;
@@ -27,7 +27,6 @@ public class HeaderPanelAppointment extends JPanel{
         initComponents();
         createPanelHeaderLabels();
         createLabelAddVaccines();
-        createLabelViewDates();
         createTitlePanel();
         createLblTitle();
         createButtonExit();
@@ -50,17 +49,7 @@ public class HeaderPanelAppointment extends JPanel{
         headerLabelsPanel.setBackground(Global.HEADER_BACKGROUND_COLOR);
         this.add(headerLabelsPanel, BorderLayout.CENTER);
     }
-    private void createLabelViewDates(){
-        JLabel label =  new LabelHeader("Añadir Vacunas");
-        label.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-                createVaccines();
-            }
-        });
-        headerLabelsPanel.add(label);
-    }
+
     private void createLabelAddVaccines(){
         JLabel label =  new LabelHeader("Ver Citas");
         label.addMouseListener(new MouseAdapter() {

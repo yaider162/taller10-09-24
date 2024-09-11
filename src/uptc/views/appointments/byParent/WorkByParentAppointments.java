@@ -1,21 +1,22 @@
 package uptc.views.appointments.byParent;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.Table;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.NumericTextField;
+
+import interfaces.Interfaces;
 import lombok.Getter;
+import uptc.views.appointments.Table;
+import uptc.views.wildCardClasses.NumericTextField;
+import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
 import java.awt.*;
 
 @Getter
 public class WorkByParentAppointments extends JPanel {
-    private final VetInterface.Presenter presenterVet;
+    private final Interfaces.Presenter presenterVet;
     private Table tableByPhoneNumber;
     private NumericTextField numericTextField;
 
-    public WorkByParentAppointments(VetInterface.Presenter presenterVet){
+    public WorkByParentAppointments(Interfaces.Presenter presenterVet){
         this.presenterVet = presenterVet;
         initWorkPanel();
     }

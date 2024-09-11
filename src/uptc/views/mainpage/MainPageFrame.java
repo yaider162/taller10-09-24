@@ -1,11 +1,11 @@
 package uptc.views.mainpage;
 
 
-import uptc.interfaces.Interfaces;
+
+import interfaces.Interfaces;
 
 import javax.swing.*;
 import java.awt.*;
-import java.net.URL;
 
 public class MainPageFrame extends JFrame implements Interfaces.View {
     private Interfaces.Presenter presenter;
@@ -28,7 +28,6 @@ public class MainPageFrame extends JFrame implements Interfaces.View {
         this.setLayout(new BorderLayout());
         this.setSize(getMainSize());
         this.setLocationRelativeTo(null);
-        setAppIcon();
     }
     private Dimension getMainSize(){
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -44,12 +43,7 @@ public class MainPageFrame extends JFrame implements Interfaces.View {
         JPanel headerPanel = new HeaderPanel(this, presenter);
         this.add(headerPanel, BorderLayout.NORTH);
     }
-    private void setAppIcon(){
-        URL iconURL = MainPageFrame.class.getResource("/icons/IconoPrograma.png");
-        assert iconURL != null;
-        ImageIcon icon = new ImageIcon(iconURL);
-        this.setIconImage(icon.getImage());
-    }
+
 
     @Override
     public void setPresenter(Interfaces.Presenter presenter) {

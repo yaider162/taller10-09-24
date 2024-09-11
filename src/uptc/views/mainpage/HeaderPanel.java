@@ -1,7 +1,8 @@
 package uptc.views.mainpage;
 
 
-import uptc.interfaces.Interfaces;
+import interfaces.Interfaces;
+import uptc.views.appointments.allAppointments.MainAll;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -22,7 +23,6 @@ public class HeaderPanel extends JPanel{
         this.presenter = presenter;
         initComponents();
         createPanelHeaderLabels();
-        createLabelAddVaccines();
         createLabelViewDates();
         createTitlePanel();
         createLblTitle();
@@ -56,15 +56,7 @@ public class HeaderPanel extends JPanel{
         });
         headerLabelsPanel.add(label);
     }
-    private void createLabelAddVaccines(){
-        JLabel label =  new LabelHeader("Agregar Vacunas");
-        label.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent evt) {
-                addVaccine();
-            }
-        });
-        headerLabelsPanel.add(label);
-    }
+
     private void createTitlePanel(){
         titlePanel = new JPanel();
         titlePanel.setBackground(Global.HEADER_BACKGROUND_COLOR);
@@ -84,7 +76,7 @@ public class HeaderPanel extends JPanel{
         headerLabelsPanel.add(button);
     }
     private void addAppointments(){
-        MainAllAppointments mainAllAppointments = new MainAllAppointments(mainPageFrame, presenter);
+        MainAll mainAllAppointments = new MainAll(mainPageFrame, presenter);
         mainAllAppointments.setVisible(true);
     }
 }

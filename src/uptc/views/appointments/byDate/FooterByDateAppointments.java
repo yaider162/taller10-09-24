@@ -1,13 +1,14 @@
 package uptc.views.appointments.byDate;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.allAppointments.MainAllAppointments;
-import co.edu.uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
-import co.edu.uptc.views.appointments.byParent.MainByParentAppointments;
-import co.edu.uptc.views.appointments.byWeight.MainByWeightAppointments;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.LabelHeader;
+
+import interfaces.Interfaces;
+import uptc.views.appointments.allAppointments.MainAll;
+import uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
+import uptc.views.appointments.byParent.MainByParentAppointments;
+import uptc.views.appointments.byWeight.MainByWeightAppointments;
+import uptc.views.mainpage.MainPageFrame;
+import uptc.views.wildCardClasses.Global;
+import uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;

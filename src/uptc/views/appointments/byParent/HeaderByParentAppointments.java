@@ -1,12 +1,13 @@
 package uptc.views.appointments.byParent;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.addVaccines.MainAddVaccines;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-import co.edu.uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
-import co.edu.uptc.views.wildCardClasses.CustomButton;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.LabelHeader;
+
+
+import interfaces.Interfaces;
+import uptc.views.mainpage.MainPageFrame;
+import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
+import uptc.views.wildCardClasses.CustomButton;
+import uptc.views.wildCardClasses.Global;
+import uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,16 +19,15 @@ public class HeaderByParentAppointments extends JPanel {
     private JPanel titlePanel;
     private final JDialog parent;
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenterVet;
+    private final Interfaces.Presenter presenterVet;
 
-    public HeaderByParentAppointments(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenterVet){
+    public HeaderByParentAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenterVet = presenterVet;
         initComponents();
         createPanelHeaderLabels();
         createLabelAddVaccines();
-        createLabelViewDates();
         createTitlePanel();
         createLblTitle();
         createButtonExit();
@@ -49,17 +49,6 @@ public class HeaderByParentAppointments extends JPanel {
         headerLabelsPanel.setLayout(layout);
         headerLabelsPanel.setBackground(Global.HEADER_BACKGROUND_COLOR);
         this.add(headerLabelsPanel, BorderLayout.CENTER);
-    }
-    private void createLabelViewDates(){
-        JLabel label =  new LabelHeader("Añadir Vacunas");
-        label.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-                createVaccines();
-            }
-        });
-        headerLabelsPanel.add(label);
     }
     private void createLabelAddVaccines(){
         JLabel label =  new LabelHeader("Registrar Cita");
@@ -90,10 +79,7 @@ public class HeaderByParentAppointments extends JPanel {
         button.addActionListener(e -> System.exit(0));
         headerLabelsPanel.add(button);
     }
-    private void createVaccines(){
-        MainAddVaccines mainAddVaccines = new MainAddVaccines(mainPageFrame, presenterVet);
-        mainAddVaccines.setVisible(true);
-    }
+
     private void createRegister(){
         RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenterVet);
         registerAppointmentMainPage.setVisible(true);

@@ -1,7 +1,9 @@
 package uptc.views.appointments.byParent;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.mainpage.MainPageFrame;
+
+
+import interfaces.Interfaces;
+import uptc.views.mainpage.MainPageFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,9 +12,9 @@ import java.awt.event.ActionListener;
 
 public class MainByParentAppointments extends JDialog {
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenterVet;
+    private final Interfaces.Presenter presenterVet;
 
-    public MainByParentAppointments(MainPageFrame mainPageFrame, VetInterface.Presenter presenterVet){
+    public MainByParentAppointments(MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenterVet = presenterVet;

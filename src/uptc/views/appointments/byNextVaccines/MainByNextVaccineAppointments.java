@@ -2,7 +2,7 @@ package uptc.views.appointments.byNextVaccines;
 
 
 
-import uptc.interfaces.Interfaces;
+import interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
 
 import javax.swing.*;

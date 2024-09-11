@@ -1,5 +1,8 @@
+import uptc.views.mainpage.MainPageFrame;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, Ian!");
+        MainPageFrame mainPageFrame = new MainPageFrame();
+        mainPageFrame.start();
     }
 }
