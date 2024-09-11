@@ -1,14 +1,11 @@
 package uptc.views.appointments.allAppointments;
 
-
 import uptc.views.appointments.byDate.MainByDateAppointments;
 import uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
-import uptc.views.appointments.byParent.MainByParentAppointments;
 import uptc.views.appointments.byWeight.MainByWeightAppointments;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
-
 import interfaces.Interfaces;
 
 import javax.swing.*;
@@ -62,6 +59,7 @@ public class FooterAll extends JPanel {
                 parent.dispose();
                 createByWeight();
             }
+
             private void createByWeight() {
                 MainByWeightAppointments mainByWeightAppointments = new MainByWeightAppointments(mainPageFrame, presenter);
                 mainByWeightAppointments.setVisible(true);
@@ -97,7 +95,6 @@ public class FooterAll extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByResponsible();
             }
         });
         gridpanel.add(responsible);
@@ -123,9 +120,5 @@ public class FooterAll extends JPanel {
     private void createByDateAppointments(){
         MainByDateAppointments mainByDateAppointments = new MainByDateAppointments(mainPageFrame, presenter);
         mainByDateAppointments.setVisible(true);
-    }
-    private void createByResponsible(){
-        MainByParentAppointments mainByResponsibleAppointments = new MainByParentAppointments(mainPageFrame, presenter);
-        mainByResponsibleAppointments.setVisible(true);
     }
 }

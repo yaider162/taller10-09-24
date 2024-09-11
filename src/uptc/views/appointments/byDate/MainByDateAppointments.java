@@ -1,9 +1,7 @@
 package uptc.views.appointments.byDate;
 
-import uptc.views.mainpage.MainPageFrame;
-
 import interfaces.Interfaces;
-
+import uptc.views.mainpage.MainPageFrame;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

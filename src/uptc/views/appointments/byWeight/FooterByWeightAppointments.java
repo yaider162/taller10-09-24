@@ -1,13 +1,12 @@
 package uptc.views.appointments.byWeight;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.allAppointments.MainAllAppointments;
-import co.edu.uptc.views.appointments.byDate.MainByDateAppointments;
-import co.edu.uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
-import co.edu.uptc.views.appointments.byParent.MainByParentAppointments;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.LabelHeader;
+import interfaces.Interfaces;
+import uptc.views.appointments.allAppointments.MainAll;
+import uptc.views.appointments.byDate.MainByDateAppointments;
+import uptc.views.appointments.byParent.MainByParentAppointments;
+import uptc.views.mainpage.MainPageFrame;
+import uptc.views.wildCardClasses.Global;
+import uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,9 +16,9 @@ import java.awt.event.MouseEvent;
 public class FooterByWeightAppointments extends JPanel {
     private final MainPageFrame mainPageFrame;
     private final JDialog parent;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public FooterByWeightAppointments(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenter) {
+    public FooterByWeightAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
         this.mainPageFrame = mainPageFrame;
         this.parent = parent;
         this.presenter = presenter;
@@ -56,7 +55,6 @@ public class FooterByWeightAppointments extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByNextVaccine();
             }
         });
         gridPanel.add(all);
@@ -109,7 +107,7 @@ public class FooterByWeightAppointments extends JPanel {
         gridPanel.add(responsible);
     }
     private void createAllAppointments(){
-        MainAllAppointments mainAllAppointments = new MainAllAppointments(mainPageFrame, presenter);
+        MainAll mainAllAppointments = new MainAll(mainPageFrame, presenter);
         mainAllAppointments.setVisible(true);
     }
     private void createByDateAppointments(){
@@ -119,9 +117,5 @@ public class FooterByWeightAppointments extends JPanel {
     private void createByResponsible(){
         MainByParentAppointments mainByResponsibleAppointments = new MainByParentAppointments(mainPageFrame, presenter);
         mainByResponsibleAppointments.setVisible(true);
-    }
-    private void createByNextVaccine() {
-        MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenter);
-        mainByNextVaccineAppointments.setVisible(true);
     }
 }

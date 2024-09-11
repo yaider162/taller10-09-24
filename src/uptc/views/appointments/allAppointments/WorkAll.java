@@ -1,9 +1,9 @@
 package uptc.views.appointments.allAppointments;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.Table;
-import co.edu.uptc.views.wildCardClasses.Global;
+import interfaces.Interfaces;
 import lombok.Getter;
+import uptc.views.appointments.Table;
+import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,9 +11,9 @@ import java.awt.*;
 @Getter
 public class WorkAll extends JPanel  {
     private Table tableAllAppointments;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public WorkAll(VetInterface.Presenter presenter){
+    public WorkAll(Interfaces.Presenter presenter){
         this.presenter = presenter;
         initWorkPanel();
         setData();

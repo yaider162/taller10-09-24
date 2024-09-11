@@ -1,10 +1,10 @@
 package uptc.views.appointments.byWeight;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.Table;
-import co.edu.uptc.views.wildCardClasses.CustomButton;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.NumericTextField;
+import interfaces.Interfaces;
+import uptc.views.appointments.Table;
+import uptc.views.wildCardClasses.Global;
+import uptc.views.wildCardClasses.CustomButton;
+import uptc.views.wildCardClasses.*;
 import lombok.Getter;
 
 import javax.swing.*;
@@ -12,12 +12,12 @@ import java.awt.*;
 
 @Getter
 public class WorkByWeightAppointments extends JPanel {
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
     private Table tableByDueDateVaccine;
     private CustomButton button;
     private NumericTextField numericTextField;
 
-    public WorkByWeightAppointments(VetInterface.Presenter presenter){
+    public WorkByWeightAppointments(Interfaces.Presenter presenter){
         this.presenter = presenter;
         initWorkPanel();
     }
