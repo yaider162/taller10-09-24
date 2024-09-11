@@ -6,7 +6,7 @@ import uptc.views.appointments.byWeight.MainByWeightAppointments;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 
 import javax.swing.*;
 import java.awt.*;

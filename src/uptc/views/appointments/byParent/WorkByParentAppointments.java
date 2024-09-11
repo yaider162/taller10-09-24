@@ -1,7 +1,7 @@
 package uptc.views.appointments.byParent;
 
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import lombok.Getter;
 import uptc.views.appointments.Table;
 import uptc.views.wildCardClasses.NumericTextField;

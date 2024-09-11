@@ -1,6 +1,6 @@
 package uptc.views.appointments.byWeight;
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
 import uptc.views.appointments.byDate.MainByDateAppointments;
 import uptc.views.appointments.byParent.MainByParentAppointments;

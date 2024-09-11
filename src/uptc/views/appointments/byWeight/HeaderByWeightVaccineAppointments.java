@@ -2,7 +2,7 @@ package uptc.views.appointments.byWeight;
 
 import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
 import uptc.views.wildCardClasses.CustomButton;
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;

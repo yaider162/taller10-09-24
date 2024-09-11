@@ -1,6 +1,6 @@
 package uptc.views.appointments.byWeight;
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
 import javax.swing.*;
 import java.awt.*;

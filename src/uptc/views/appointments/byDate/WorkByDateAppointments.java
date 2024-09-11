@@ -1,6 +1,6 @@
 package uptc.views.appointments.byDate;
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.appointments.Table;
 import uptc.views.wildCardClasses.Global;
 import lombok.Getter;
