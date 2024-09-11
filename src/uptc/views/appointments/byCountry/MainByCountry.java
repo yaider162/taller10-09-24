@@ -1,4 +1,4 @@
-package uptc.views.appointments.byCity;
+package uptc.views.appointments.byCountry;
 
 
 
@@ -10,14 +10,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainByNextVaccineAppointments extends JDialog {
+public class MainByCountry extends JDialog {
     private final MainPageFrame mainPageFrame;
-    private final Interfaces.Presenter presenter;
+    private final Interfaces.Presenter presenterVet;
 
-    public MainByNextVaccineAppointments(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+    public MainByCountry(MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
-        this.presenter = presenter;
+        this.presenterVet = presenterVet;
         initComponents();
         createHeader();
         createWork();
@@ -38,15 +38,15 @@ public class MainByNextVaccineAppointments extends JDialog {
         return new Dimension((int)width, (int)height);
     }
     private void createFooter() {
-        FooterByNextVaccineAppointments footerAllAppointments = new FooterByNextVaccineAppointments(this, mainPageFrame, presenter);
+        FooterByCountry footerAllAppointments = new FooterByCountry(this, mainPageFrame, presenterVet);
         add(footerAllAppointments, BorderLayout.SOUTH);
     }
     private void createWork() {
-        WorkByNextVaccineAppointments workAllApointments = new WorkByNextVaccineAppointments(presenter);
+        WorkByCountry workAllApointments = new WorkByCountry(presenterVet);
         add(workAllApointments, BorderLayout.CENTER);
     }
     private void createHeader() {
-        HeaderByNextVaccineAppointments headerAllAppointments = new HeaderByNextVaccineAppointments(this, mainPageFrame, presenter);
+        HeaderByCountry headerAllAppointments = new HeaderByCountry(this, mainPageFrame, presenterVet);
         add(headerAllAppointments, BorderLayout.NORTH);
     }
     private void fadeIn() {

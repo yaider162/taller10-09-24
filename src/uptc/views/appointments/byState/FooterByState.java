@@ -3,8 +3,8 @@ package uptc.views.appointments.byState;
 
 import uptc.interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
-import uptc.views.appointments.byCity.MainByNextVaccineAppointments;
-import uptc.views.appointments.byCountry.MainByParentAppointments;
+import uptc.views.appointments.byCity.MainByCity;
+import uptc.views.appointments.byCountry.MainByCountry;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -98,12 +98,12 @@ public class FooterByState extends JPanel {
     }
 
     private void createByParentAppointments(){
-        MainByParentAppointments mainByParentAppointments = new MainByParentAppointments(mainPageFrame, presenter);
-        mainByParentAppointments.setVisible(true);
+        MainByCountry mainByCountry = new MainByCountry(mainPageFrame, presenter);
+        mainByCountry.setVisible(true);
     }
     private void createByNextVaccine(){
-        MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenter);
-        mainByNextVaccineAppointments.setVisible(true);
+        MainByCity mainByCity = new MainByCity(mainPageFrame, presenter);
+        mainByCity.setVisible(true);
     }
 
 

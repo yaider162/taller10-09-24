@@ -9,11 +9,11 @@ import javax.swing.*;
 import java.awt.*;
 
 @Getter
-public class WorkByNextVaccineAppointments extends JPanel {
+public class WorkByCity extends JPanel {
     private final Interfaces.Presenter presenter;
     private Table tableByDueDateVaccine;
 
-    public WorkByNextVaccineAppointments(Interfaces.Presenter presenter){
+    public WorkByCity(Interfaces.Presenter presenter){
         this.presenter = presenter;
         initWorkPanel();
     }

@@ -4,7 +4,7 @@ package uptc.views.appointments.byCountry;
 import uptc.interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
 import uptc.views.appointments.byState.MainByState;
-import uptc.views.appointments.byCity.MainByNextVaccineAppointments;
+import uptc.views.appointments.byCity.MainByCity;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -14,12 +14,12 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class FooterByParentAppointments extends JPanel {
+public class FooterByCountry extends JPanel {
     private final MainPageFrame mainPageFrame;
     private final JDialog parent;
     private final Interfaces.Presenter presenterVet;
 
-    public FooterByParentAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet) {
+    public FooterByCountry(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet) {
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenterVet = presenterVet;
@@ -103,8 +103,8 @@ public class FooterByParentAppointments extends JPanel {
         mainByDateAppointments.setVisible(true);
     }
     private void createByNextVaccineAppointments(){
-        MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenterVet);
-        mainByNextVaccineAppointments.setVisible(true);
+        MainByCity mainByCity = new MainByCity(mainPageFrame, presenterVet);
+        mainByCity.setVisible(true);
 
     }
 

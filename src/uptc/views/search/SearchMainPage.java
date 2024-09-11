@@ -1,4 +1,4 @@
-package uptc.views.registerAppointmentVet;
+package uptc.views.search;
 
 import uptc.interfaces.Interfaces;
 import lombok.Setter;
@@ -9,11 +9,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 @Setter
-public class RegisterAppointmentMainPage extends JDialog {
+public class SearchMainPage extends JDialog {
     private Interfaces.Presenter presenterVet;
     private MainPageFrame mainPageFrame;
 
-    public RegisterAppointmentMainPage(MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
+    public SearchMainPage(MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenterVet = presenterVet;
@@ -38,13 +38,13 @@ public class RegisterAppointmentMainPage extends JDialog {
         return new Dimension((int)width, (int)height);
     }
     private void createHeaderPanel(){
-        HeaderPanelAppointment headerPanel = new HeaderPanelAppointment(this, mainPageFrame, presenterVet);
+        SearchHeader headerPanel = new SearchHeader(this, mainPageFrame, presenterVet);
         this.add(headerPanel, BorderLayout.NORTH);
     }
     private void createWorkPanel(){
-        WorkPanelAppointmentVet workPanelAppointmentVet = new WorkPanelAppointmentVet(this, presenterVet);
-        workPanelAppointmentVet.buildPanel();
-        add(workPanelAppointmentVet, BorderLayout.CENTER);
+        WorkPanelSearch workPanelSearch = new WorkPanelSearch(this, presenterVet);
+        workPanelSearch.buildPanel();
+        add(workPanelSearch, BorderLayout.CENTER);
     }
     private void fadeIn() {
         Timer timer = new Timer(10, new ActionListener() {

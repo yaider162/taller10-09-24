@@ -1,7 +1,7 @@
 package uptc.views.mainpage;
 
 import uptc.interfaces.Interfaces;
-import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
+import uptc.views.search.SearchMainPage;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
 
@@ -38,7 +38,7 @@ public class WorkPanel extends JPanel {
         add(Box.createVerticalGlue());
     }
     private void registerAppointment(){
-        RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenterVet);
-        registerAppointmentMainPage.setVisible(true);
+        SearchMainPage searchMainPage = new SearchMainPage(mainPageFrame, presenterVet);
+        searchMainPage.setVisible(true);
     }
 }

@@ -1,4 +1,4 @@
-package uptc.views.appointments.byCountry;
+package uptc.views.appointments.byCity;
 
 
 
@@ -10,14 +10,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainByParentAppointments extends JDialog {
+public class MainByCity extends JDialog {
     private final MainPageFrame mainPageFrame;
-    private final Interfaces.Presenter presenterVet;
+    private final Interfaces.Presenter presenter;
 
-    public MainByParentAppointments(MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
+    public MainByCity(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
-        this.presenterVet = presenterVet;
+        this.presenter = presenter;
         initComponents();
         createHeader();
         createWork();
@@ -38,15 +38,15 @@ public class MainByParentAppointments extends JDialog {
         return new Dimension((int)width, (int)height);
     }
     private void createFooter() {
-        FooterByParentAppointments footerAllAppointments = new FooterByParentAppointments(this, mainPageFrame, presenterVet);
+        FooterByCity footerAllAppointments = new FooterByCity(this, mainPageFrame, presenter);
         add(footerAllAppointments, BorderLayout.SOUTH);
     }
     private void createWork() {
-        WorkByParentAppointments workAllApointments = new WorkByParentAppointments(presenterVet);
+        WorkByCity workAllApointments = new WorkByCity(presenter);
         add(workAllApointments, BorderLayout.CENTER);
     }
     private void createHeader() {
-        HeaderByParentAppointments headerAllAppointments = new HeaderByParentAppointments(this, mainPageFrame, presenterVet);
+        HeaderByCity headerAllAppointments = new HeaderByCity(this, mainPageFrame, presenter);
         add(headerAllAppointments, BorderLayout.NORTH);
     }
     private void fadeIn() {

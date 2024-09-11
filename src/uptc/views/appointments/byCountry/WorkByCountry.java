@@ -10,11 +10,11 @@ import javax.swing.*;
 import java.awt.*;
 
 @Getter
-public class WorkByParentAppointments extends JPanel {
+public class WorkByCountry extends JPanel {
     private final Interfaces.Presenter presenterVet;
     private Table tableByPhoneNumber;
 
-    public WorkByParentAppointments(Interfaces.Presenter presenterVet){
+    public WorkByCountry(Interfaces.Presenter presenterVet){
         this.presenterVet = presenterVet;
         initWorkPanel();
     }

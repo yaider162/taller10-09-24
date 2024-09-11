@@ -1,10 +1,9 @@
-package uptc.views.appointments.byCountry;
-
+package uptc.views.search;
 
 
 import uptc.interfaces.Interfaces;
+import uptc.views.appointments.allAppointments.MainAll;
 import uptc.views.mainpage.MainPageFrame;
-import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -14,17 +13,17 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class HeaderByParentAppointments extends JPanel {
+public class SearchHeader extends JPanel{
     private JPanel headerLabelsPanel;
     private JPanel titlePanel;
     private final JDialog parent;
     private final MainPageFrame mainPageFrame;
-    private final Interfaces.Presenter presenterVet;
+    private final Interfaces.Presenter presenter;
 
-    public HeaderByParentAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
+    public SearchHeader(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
-        this.presenterVet = presenterVet;
+        this.presenter = presenter;
         initComponents();
         createPanelHeaderLabels();
         createLabelAddVaccines();
@@ -50,13 +49,14 @@ public class HeaderByParentAppointments extends JPanel {
         headerLabelsPanel.setBackground(Global.HEADER_BACKGROUND_COLOR);
         this.add(headerLabelsPanel, BorderLayout.CENTER);
     }
+
     private void createLabelAddVaccines(){
-        JLabel label =  new LabelHeader("Analisis Por Vehiculo");
+        JLabel label =  new LabelHeader("Analisis geografico");
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createRegister();
+                createAppointments();
             }
         });
         headerLabelsPanel.add(label);
@@ -68,7 +68,7 @@ public class HeaderByParentAppointments extends JPanel {
         this.add(titlePanel, BorderLayout.WEST);
     }
     private void createLblTitle(){
-        JLabel label = new JLabel("Analisis Geograficos");
+        JLabel label = new JLabel("Analisis Por Vehiculo");
         titlePanel.add(Box.createHorizontalStrut(50));
         label.setFont(Global.FONT_TITLE_NORMAL);
         label.setForeground(Global.HEADER_TEXT_COLOR);
@@ -80,9 +80,8 @@ public class HeaderByParentAppointments extends JPanel {
         headerLabelsPanel.add(button);
     }
 
-    private void createRegister(){
-        RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenterVet);
-        registerAppointmentMainPage.setVisible(true);
+    private void createAppointments(){
+        MainAll mainAppointments = new MainAll(mainPageFrame, presenter);
+        mainAppointments.setVisible(true);
     }
-
 }

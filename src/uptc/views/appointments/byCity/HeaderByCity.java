@@ -4,7 +4,7 @@ package uptc.views.appointments.byCity;
 
 import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
-import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
+import uptc.views.search.SearchMainPage;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -14,13 +14,13 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class HeaderByNextVaccineAppointments extends JPanel {
+public class HeaderByCity extends JPanel {
     private JPanel headerLabelsPanel;
     private JPanel titlePanel;
     private final JDialog parent;
     private final MainPageFrame mainPageFrame;
     private final Interfaces.Presenter presenter;
-    public HeaderByNextVaccineAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+    public HeaderByCity(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
@@ -81,8 +81,8 @@ public class HeaderByNextVaccineAppointments extends JPanel {
     }
 
     private void createRegister(){
-        RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenter);
-        registerAppointmentMainPage.setVisible(true);
+        SearchMainPage searchMainPage = new SearchMainPage(mainPageFrame, presenter);
+        searchMainPage.setVisible(true);
     }
 
 }

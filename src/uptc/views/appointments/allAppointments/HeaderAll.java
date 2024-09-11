@@ -2,7 +2,7 @@ package uptc.views.appointments.allAppointments;
 
 import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
-import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
+import uptc.views.search.SearchMainPage;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
 import uptc.views.wildCardClasses.LabelHeader;
@@ -79,7 +79,7 @@ public class HeaderAll extends JPanel {
         headerLabelsPanel.add(button);
     }
     private void createRegister(){
-        RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenter);
-        registerAppointmentMainPage.setVisible(true);
+        SearchMainPage searchMainPage = new SearchMainPage(mainPageFrame, presenter);
+        searchMainPage.setVisible(true);
     }
 }

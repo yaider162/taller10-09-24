@@ -24,11 +24,13 @@ Para ejecutar el archivo .jar se debe abrir una terminal y ejecutar el siguiente
 
 ## Requisitos de maquina
 
+## Comando Para Ejecucion
+
+- java -jar .\taller10-09-24.jar
+- Desde la ubicacion del archivo
+
 ## Autores
 Yaider Alejandro Becerra Rojas 202310031
 
 Ian Martinez Torres 202311453
 
-## Comando Para Ejecucion
-
- 
