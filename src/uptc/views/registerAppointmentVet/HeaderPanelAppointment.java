@@ -2,7 +2,7 @@ package uptc.views.registerAppointmentVet;
 
 
 import uptc.interfaces.Interfaces;
-import uptc.views.appointments.allAppointments.MainAllAppointments;
+import uptc.views.appointments.allAppointments.MainAll;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
@@ -92,7 +92,7 @@ public class HeaderPanelAppointment extends JPanel{
     }
 
     private void createAppointments(){
-        MainAllAppointments mainAppointments = new MainAllAppointments(mainPageFrame, presenter);
+        MainAll mainAppointments = new MainAll(mainPageFrame, presenter);
         mainAppointments.setVisible(true);
     }
 }

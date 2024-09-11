@@ -1,27 +1,25 @@
 package uptc.views.appointments.allAppointments;
 
-
-
-import uptc.interfaces.Interfaces;
-import uptc.views.appointments.byDate.MainByDateAppointments;
-import uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
-import uptc.views.appointments.byParent.MainByParentAppointments;
-import uptc.views.appointments.byWeight.MainByWeightAppointments;
-import uptc.views.mainpage.MainPageFrame;
-import uptc.views.wildCardClasses.Global;
-import uptc.views.wildCardClasses.LabelHeader;
+import co.edu.uptc.interfaces.VetInterface;
+import co.edu.uptc.views.appointments.byDate.MainByDateAppointments;
+import co.edu.uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;
+import co.edu.uptc.views.appointments.byParent.MainByParentAppointments;
+import co.edu.uptc.views.appointments.byWeight.MainByWeightAppointments;
+import co.edu.uptc.views.mainpage.MainPageFrame;
+import co.edu.uptc.views.wildCardClasses.Global;
+import co.edu.uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class FooterAllAppointments extends JPanel {
+public class FooterAll extends JPanel {
     private final MainPageFrame mainPageFrame;
     private final JDialog parent;
-    private final Interfaces.Presenter presenter;
+    private final VetInterface.Presenter presenter;
 
-    public FooterAllAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
+    public FooterAll(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenter) {
         this.mainPageFrame = mainPageFrame;
         this.parent = parent;
         this.presenter = presenter;

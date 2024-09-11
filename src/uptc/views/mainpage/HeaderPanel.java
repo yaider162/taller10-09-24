@@ -1,11 +1,10 @@
 package uptc.views.mainpage;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.addVaccines.MainAddVaccines;
-import co.edu.uptc.views.appointments.allAppointments.MainAllAppointments;
-import co.edu.uptc.views.wildCardClasses.CustomButton;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.LabelHeader;
+
+import uptc.interfaces.Interfaces;
+import uptc.views.wildCardClasses.CustomButton;
+import uptc.views.wildCardClasses.Global;
+import uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,9 +15,9 @@ public class HeaderPanel extends JPanel{
     private JPanel headerLabelsPanel;
     private JPanel titlePanel;
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public HeaderPanel(MainPageFrame mainPageFrame, VetInterface.Presenter presenter) {
+    public HeaderPanel(MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
         initComponents();
@@ -84,14 +83,8 @@ public class HeaderPanel extends JPanel{
         button.addActionListener(e -> System.exit(0));
         headerLabelsPanel.add(button);
     }
-    private void addVaccine(){
-        MainAddVaccines mainAddVaccines = new MainAddVaccines(mainPageFrame, presenter);
-        mainAddVaccines.setVisible(true);
-    }
     private void addAppointments(){
         MainAllAppointments mainAllAppointments = new MainAllAppointments(mainPageFrame, presenter);
         mainAllAppointments.setVisible(true);
     }
-
-
 }

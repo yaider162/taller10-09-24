@@ -20,7 +20,6 @@ public interface Interfaces {
         void setPresenter(Presenter presenter);
     }
 
-
     interface Presenter {
         void start();
         void addVaccine(String[] vaccine);

@@ -8,11 +8,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainAllAppointments extends JDialog {
+public class MainAll extends JDialog {
     private final MainPageFrame mainPageFrame;
     private final Interfaces.Presenter presenter;
 
-    public MainAllAppointments(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
+    public MainAll(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
@@ -36,16 +36,16 @@ public class MainAllAppointments extends JDialog {
         return new Dimension((int)width, (int)height);
     }
     private void createFooter() {
-        FooterAllAppointments footerAllAppointments = new FooterAllAppointments(this, mainPageFrame, presenter);
-        add(footerAllAppointments, BorderLayout.SOUTH);
+        FooterAll footerAll = new FooterAll(this, mainPageFrame, presenter);
+        add(footerAll, BorderLayout.SOUTH);
     }
     private void createWork() {
-        WorkAllAppointments workAllApointments = new WorkAllAppointments(presenter);
+        WorkAll workAllApointments = new WorkAll(presenter);
         add(workAllApointments, BorderLayout.CENTER);
     }
     private void createHeader() {
-        HeaderAllAppointments headerAllAppointments = new HeaderAllAppointments(this, mainPageFrame, presenter);
-        add(headerAllAppointments, BorderLayout.NORTH);
+        HeaderAll headerAll = new HeaderAll(this, mainPageFrame, presenter);
+        add(headerAll, BorderLayout.NORTH);
     }
     private void fadeIn() {
         Timer timer = new Timer(10, new ActionListener() {
