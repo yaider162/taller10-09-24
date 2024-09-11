@@ -1,8 +1,7 @@
 package uptc.views.appointments.byDate;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-
+import interfaces.Interfaces;
+import uptc.views.mainpage.MainPageFrame;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,8 +9,8 @@ import java.awt.event.ActionListener;
 
 public class MainByDateAppointments extends JDialog {
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenter;
-    public MainByDateAppointments(MainPageFrame mainPageFrame, VetInterface.Presenter presenter){
+    private final Interfaces.Presenter presenter;
+    public MainByDateAppointments(MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;

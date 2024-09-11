@@ -14,9 +14,6 @@ public interface Interfaces {
 
 
     interface Presenter {
-        void start();
-        void addVaccine(String[] vaccine);
-        void addVisit(String[] visit);
         String[] obtainVaccinesName();
         Object[][] obtainVisits();
         Object[][] obtainVisitsByCloseDueDate();

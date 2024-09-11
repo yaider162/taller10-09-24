@@ -18,9 +18,9 @@ import java.awt.event.MouseEvent;
 public class FooterByDateAppointments extends JPanel {
     private final JDialog parent;
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public FooterByDateAppointments(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenter) {
+    public FooterByDateAppointments(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
         this.mainPageFrame = mainPageFrame;
         this.parent = parent;
         this.presenter = presenter;
@@ -110,8 +110,8 @@ public class FooterByDateAppointments extends JPanel {
         gridPanel.add(responsible);
     }
     private void createAllAppointments(){
-        MainAllAppointments mainAllAppointments = new MainAllAppointments(mainPageFrame, presenter);
-        mainAllAppointments.setVisible(true);
+        MainAll mainAll = new MainAll(mainPageFrame, presenter);
+        mainAll.setVisible(true);
     }
     private void createNextVaccineAppointments(){
         MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenter);

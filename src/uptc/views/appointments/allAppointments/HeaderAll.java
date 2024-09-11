@@ -1,12 +1,10 @@
 package uptc.views.appointments.allAppointments;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.addVaccines.MainAddVaccines;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-import co.edu.uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
-import co.edu.uptc.views.wildCardClasses.CustomButton;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.LabelHeader;
+import interfaces.Interfaces;
+import uptc.views.mainpage.MainPageFrame;
+import uptc.views.wildCardClasses.CustomButton;
+import uptc.views.wildCardClasses.Global;
+import uptc.views.wildCardClasses.LabelHeader;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,9 +16,9 @@ public class HeaderAll extends JPanel {
     private JPanel titlePanel;
     private final JDialog parent;
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public HeaderAll(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenter){
+    public HeaderAll(JDialog parent, MainPageFrame mainPageFrame, Interfaces.Presenter presenter){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
@@ -56,7 +54,6 @@ public class HeaderAll extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createVaccines();
             }
         });
         headerLabelsPanel.add(label);
@@ -67,7 +64,7 @@ public class HeaderAll extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createRegister();
+//                createRegister();
             }
         });
         headerLabelsPanel.add(label);
@@ -90,13 +87,8 @@ public class HeaderAll extends JPanel {
         button.addActionListener(e -> System.exit(0));
         headerLabelsPanel.add(button);
     }
-    private void createVaccines(){
-        MainAddVaccines mainAddVaccines = new MainAddVaccines(mainPageFrame, presenter);
-        mainAddVaccines.setVisible(true);
-    }
-    private void createRegister(){
-        RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenter);
-        registerAppointmentMainPage.setVisible(true);
-    }
-
+//    private void createRegister(){
+//        RegisterAppointmentMainPage registerAppointmentMainPage = new RegisterAppointmentMainPage(mainPageFrame, presenter);
+//        registerAppointmentMainPage.setVisible(true);
+//    }
 }
