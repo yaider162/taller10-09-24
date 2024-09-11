@@ -53,4 +53,5 @@ public class WorkAll extends JPanel  {
             tableAllAppointments.putData(datum);
         }
     }
+
 }

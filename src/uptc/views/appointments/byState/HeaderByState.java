@@ -26,7 +26,6 @@ public class HeaderByState extends JPanel {
         initComponents();
         createPanelHeaderLabels();
         createLabelAddVaccines();
-        createLabelViewDates();
         createTitlePanel();
         createLblTitle();
         createButtonExit();
@@ -48,17 +47,6 @@ public class HeaderByState extends JPanel {
         headerLabelsPanel.setLayout(layout);
         headerLabelsPanel.setBackground(Global.HEADER_BACKGROUND_COLOR);
         this.add(headerLabelsPanel, BorderLayout.CENTER);
-    }
-    private void createLabelViewDates(){
-        JLabel label =  new LabelHeader("Analisis geograficos");
-        label.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-
-            }
-        });
-        headerLabelsPanel.add(label);
     }
     private void createLabelAddVaccines(){
         JLabel label =  new LabelHeader("Registrar Cita");

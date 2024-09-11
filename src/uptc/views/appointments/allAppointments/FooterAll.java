@@ -66,18 +66,6 @@ public class FooterAll extends JPanel {
             });
         gridPanel.add(date);
     }
-    private void createTitle4(JPanel gridpanel){
-        JLabel responsible = new LabelHeader("Registros Por Condado");
-        responsible.setFont(Global.FONT_TEXTS);
-        responsible.setForeground(Global.FOOTER_TEXT_COLOR);
-        responsible.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                parent.dispose();
-            }
-        });
-        gridpanel.add(responsible);
-    }
     private void createTitle3(JPanel gridPanel){
         JLabel petsNextTo = new LabelHeader("Registros de Ciudad");
         petsNextTo.setFont(Global.FONT_TEXTS);
@@ -90,6 +78,18 @@ public class FooterAll extends JPanel {
             }
         });
         gridPanel.add(petsNextTo);
+    }
+    private void createTitle4(JPanel gridpanel){
+        JLabel responsible = new LabelHeader("Registros Por Condado");
+        responsible.setFont(Global.FONT_TEXTS);
+        responsible.setForeground(Global.FOOTER_TEXT_COLOR);
+        responsible.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                parent.dispose();
+            }
+        });
+        gridpanel.add(responsible);
     }
     private void createByNextVaccine(){
         MainByNextVaccineAppointments mainByNextVaccineAppointments = new MainByNextVaccineAppointments(mainPageFrame, presenter);

@@ -54,43 +54,42 @@ public class FooterByState extends JPanel {
         gridPanel.add(orderBy);
     }
     private void createTitle2(JPanel gridPanel){
-        JLabel all = new LabelHeader("Ninguno");
-        all.setFont(Global.FONT_TEXTS);
-        all.setForeground(Global.FOOTER_TEXT_COLOR);
-        all.addMouseListener(new MouseAdapter() {
+        JLabel date = new LabelHeader("Registros Por Estado");
+        date.setFont(Global.FONT_TEXTS);
+        date.setForeground(Global.FOOTER_TEXT_COLOR);
+        date.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
                 createAllAppointments();
             }
         });
-        gridPanel.add(all);
+        gridPanel.add(date);
     }
     private void createTitle3(JPanel gridPanel){
-        JLabel petsNextTo = new LabelHeader("");
+        JLabel petsNextTo = new LabelHeader("Registros de Ciudad");
         petsNextTo.setFont(Global.FONT_TEXTS);
         petsNextTo.setForeground(Global.FOOTER_TEXT_COLOR);
         petsNextTo.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createNextVaccineAppointments();
+                createByParentAppointments();
             }
         });
         gridPanel.add(petsNextTo);
     }
-    private void createTitle4(JPanel gridPanel) {
-        JLabel responsible = new LabelHeader("Responsable");
+    private void createTitle4(JPanel gridpanel){
+        JLabel responsible = new LabelHeader("Registros Por Condado");
         responsible.setFont(Global.FONT_TEXTS);
         responsible.setForeground(Global.FOOTER_TEXT_COLOR);
         responsible.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 parent.dispose();
-                createByParentAppointments();
             }
         });
-        gridPanel.add(responsible);
+        gridpanel.add(responsible);
     }
     private void createAllAppointments(){
         MainAll mainAll = new MainAll(mainPageFrame, presenter);
