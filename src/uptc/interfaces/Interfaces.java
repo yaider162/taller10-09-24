@@ -1,5 +1,6 @@
 package uptc.interfaces;
 
+import co.edu.uptc.models.SimpleList;
 import co.edu.uptc.pojos.Vaccine;
 import co.edu.uptc.pojos.VetVisit;
 
@@ -10,27 +11,12 @@ import java.util.TreeSet;
 
 public interface Interfaces {
     interface Model {
-        void addVaccine(Vaccine vaccine);
-        void addVisit(VetVisit visit);
-        ArrayList<VetVisit> obtainVisitByCloseDueDate();
-        ArrayList<VetVisit> obtainVisitByLaterDueDate();
-        ArrayList<VetVisit> obtainVisitByPetParentPhoneNumber(Long phoneNumber);
-        ArrayList<VetVisit> obtainVisitByDate(LocalDate date);
-        ArrayList<VetVisit> getVisits();
-        TreeSet<Vaccine> getVaccines();
-
-        ArrayList<VetVisit> obtainVisitsUpSpecifiedWeight(int weight);
-
-        ArrayList<VetVisit> obtainVisitsDownSpecifiedWeight(int weight);
-
-        void setPresenter(Presenter presenter);
         void setVisits(ArrayList<VetVisit> visits);
         void setVaccines(TreeSet<Vaccine> vaccines);
     }
 
     interface View {
         void start();
-
         void setPresenter(Presenter presenter);
     }
 
@@ -40,7 +26,6 @@ public interface Interfaces {
         void addVaccine(String[] vaccine);
         void addVisit(String[] visit);
         String[] obtainVaccinesName();
-        Vaccine obtainVaccineByName(String vaccineName);
         Object[][] obtainVisits();
         Object[][] obtainVisitsByCloseDueDate();
         Object[][] obtainVisitsByPetParentPhoneNumber(Long phoneNumber);
