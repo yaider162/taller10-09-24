@@ -1,8 +1,8 @@
 package uptc.views.appointments.byDate;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.appointments.Table;
-import co.edu.uptc.views.wildCardClasses.Global;
+import interfaces.Interfaces;
+import uptc.views.appointments.Table;
+import uptc.views.wildCardClasses.Global;
 import com.toedter.calendar.JDateChooser;
 import lombok.Getter;
 
@@ -13,9 +13,9 @@ import java.awt.*;
 public class WorkByDateAppointments extends JPanel {
     private JDateChooser dateChooser;
     private Table tableByDateAppointments;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public WorkByDateAppointments(VetInterface.Presenter presenter){
+    public WorkByDateAppointments(Interfaces.Presenter presenter){
         this.presenter = presenter;
         initWorkPanel();
     }

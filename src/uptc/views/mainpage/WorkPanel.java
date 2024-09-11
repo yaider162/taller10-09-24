@@ -1,6 +1,6 @@
 package uptc.views.mainpage;
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
 import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
