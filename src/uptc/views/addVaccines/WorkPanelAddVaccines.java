@@ -1,10 +1,5 @@
 package uptc.views.addVaccines;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.wildCardClasses.CustomButton;
-import co.edu.uptc.views.wildCardClasses.CustomJComboBox;
-import co.edu.uptc.views.wildCardClasses.Global;
-import co.edu.uptc.views.wildCardClasses.LimitedTextField;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,13 +11,10 @@ import java.util.Objects;
 @Getter
 @Setter
 public class WorkPanelAddVaccines extends JPanel{
-    private VetInterface.Presenter presenterVet;
-    private LimitedTextField nameVaccine;
-    private CustomJComboBox dueTime;
-    private CustomJComboBox petType;
+
     private JDialog parent;
 
-    public WorkPanelAddVaccines(JDialog parent, VetInterface.Presenter presenterVet){
+    public WorkPanelAddVaccines(JDialog parent, Interfaces.Presenter presenterVet){
         this.parent = parent;
         this.presenterVet = presenterVet;
         initWorkPanel();

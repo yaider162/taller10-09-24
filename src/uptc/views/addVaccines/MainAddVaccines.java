@@ -1,8 +1,10 @@
 package uptc.views.addVaccines;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-import co.edu.uptc.views.wildCardClasses.CustomJComboBox;
+
+
+import uptc.interfaces.Interfaces;
+import uptc.views.mainpage.MainPageFrame;
+import uptc.views.wildCardClasses.CustomJComboBox;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,9 +14,9 @@ import java.awt.event.ActionListener;
 
 public class MainAddVaccines extends JDialog {
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenter;
+    private final Interfaces.Presenter presenter;
 
-    public MainAddVaccines(MainPageFrame mainPageFrame, VetInterface.Presenter presenter) {
+    public MainAddVaccines(MainPageFrame mainPageFrame, Interfaces.Presenter presenter) {
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
@@ -42,9 +44,9 @@ public class MainAddVaccines extends JDialog {
     }
     private void createWorkPanel(){
         WorkPanelAddVaccines workPanel = new WorkPanelAddVaccines(this, presenter);
-        workPanel.setDueTime(new CustomJComboBox(new String[]{"1 mes", "2 meses", "3 meses", "4 meses", "5 meses", "6 meses", "7 meses", "8 meses", "9 meses", "10 meses", "11 meses", "12 meses"}));
-        CustomJComboBox petType = new CustomJComboBox(presenter.obtainPetTypes());
-        workPanel.setPetType(petType);
+//        workPanel.setDueTime(new CustomJComboBox(new String[]{"1 mes", "2 meses", "3 meses", "4 meses", "5 meses", "6 meses", "7 meses", "8 meses", "9 meses", "10 meses", "11 meses", "12 meses"}));
+//        CustomJComboBox petType = new CustomJComboBox(presenter.obtainPetTypes());
+//        workPanel.setPetType(petType);
         workPanel.build();
         this.add(workPanel, BorderLayout.CENTER);
     }

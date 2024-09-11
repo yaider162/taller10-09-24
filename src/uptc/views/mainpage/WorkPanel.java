@@ -1,18 +1,18 @@
 package uptc.views.mainpage;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
-import co.edu.uptc.views.wildCardClasses.CustomButton;
-import co.edu.uptc.views.wildCardClasses.Global;
+import uptc.interfaces.Interfaces;
+import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
+import uptc.views.wildCardClasses.CustomButton;
+import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class WorkPanel extends JPanel {
     private final MainPageFrame mainPageFrame;
-    private final VetInterface.Presenter presenterVet;
+    private final Interfaces.Presenter presenterVet;
 
-    public WorkPanel(MainPageFrame mainPageFrame, VetInterface.Presenter presenterVet){
+    public WorkPanel(MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
         this.mainPageFrame = mainPageFrame;
         this.presenterVet = presenterVet;
         initWorkPanel();

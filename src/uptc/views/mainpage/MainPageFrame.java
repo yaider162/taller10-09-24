@@ -1,13 +1,14 @@
 package uptc.views.mainpage;
 
-import co.edu.uptc.interfaces.VetInterface;
+
+import uptc.interfaces.Interfaces;
 
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
 
-public class MainPageFrame extends JFrame implements VetInterface.View {
-    private VetInterface.Presenter presenter;
+public class MainPageFrame extends JFrame implements Interfaces.View {
+    private Interfaces.Presenter presenter;
 
     public MainPageFrame(){
     }
@@ -51,7 +52,7 @@ public class MainPageFrame extends JFrame implements VetInterface.View {
     }
 
     @Override
-    public void setPresenter(VetInterface.Presenter presenter) {
+    public void setPresenter(Interfaces.Presenter presenter) {
         this.presenter = presenter;
     }
 }

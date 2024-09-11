@@ -1,9 +1,9 @@
 package uptc.views.registerAppointmentVet;
 
-import co.edu.uptc.interfaces.VetInterface;
-import co.edu.uptc.views.mainpage.MainPageFrame;
-import co.edu.uptc.views.wildCardClasses.CustomJComboBox;
 import lombok.Setter;
+import uptc.interfaces.Interfaces;
+import uptc.views.mainpage.MainPageFrame;
+import uptc.views.wildCardClasses.CustomJComboBox;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,10 +11,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 @Setter
 public class RegisterAppointmentMainPage extends JDialog {
-    private VetInterface.Presenter presenterVet;
+    private Interfaces.Presenter presenterVet;
     private MainPageFrame mainPageFrame;
 
-    public RegisterAppointmentMainPage(MainPageFrame mainPageFrame, VetInterface.Presenter presenterVet){
+    public RegisterAppointmentMainPage(MainPageFrame mainPageFrame, Interfaces.Presenter presenterVet){
         super(mainPageFrame, true);
         this.mainPageFrame = mainPageFrame;
         this.presenterVet = presenterVet;
@@ -44,12 +44,12 @@ public class RegisterAppointmentMainPage extends JDialog {
     }
     private void createWorkPanel(){
         WorkPanelAppointmentVet workPanelAppointmentVet = new WorkPanelAppointmentVet(this, presenterVet);
-        workPanelAppointmentVet.setPetType(new CustomJComboBox(presenterVet.obtainPetTypes()));
-        workPanelAppointmentVet.setVaccinesNum(new CustomJComboBox(new String[]{"1", "2", "3", "4"}));
+//        workPanelAppointmentVet.setPetType(new CustomJComboBox(presenterVet.obtainPetTypes()));
+//        workPanelAppointmentVet.setVaccinesNum(new CustomJComboBox(new String[]{"1", "2", "3", "4"}));
         if (presenterVet.obtainVaccinesName().length == 0){
             JOptionPane.showMessageDialog(null,"No hay vacunas, cree una", "Error", JOptionPane.ERROR_MESSAGE);
         }else
-            workPanelAppointmentVet.setVaccines(new CustomJComboBox(presenterVet.obtainVaccinesName()));
+//            workPanelAppointmentVet.setVaccines(new CustomJComboBox(presenterVet.obtainVaccinesName()));
 
         workPanelAppointmentVet.buildPanel();
         add(workPanelAppointmentVet, BorderLayout.CENTER);
