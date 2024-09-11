@@ -3,7 +3,6 @@ package uptc.views.appointments.byCity;
 import uptc.interfaces.Interfaces;
 import lombok.Getter;
 import uptc.views.appointments.Table;
-import uptc.views.wildCardClasses.CustomButton;
 import uptc.views.wildCardClasses.Global;
 
 import javax.swing.*;
@@ -13,7 +12,6 @@ import java.awt.*;
 public class WorkByNextVaccineAppointments extends JPanel {
     private final Interfaces.Presenter presenter;
     private Table tableByDueDateVaccine;
-    private CustomButton button;
 
     public WorkByNextVaccineAppointments(Interfaces.Presenter presenter){
         this.presenter = presenter;
@@ -37,22 +35,9 @@ public class WorkByNextVaccineAppointments extends JPanel {
         subHeaderPanel.setLayout(new BoxLayout(subHeaderPanel, BoxLayout.X_AXIS));
         subHeaderPanel.setPreferredSize(obtainSizeForSubHeader());
         createTitle(subHeaderPanel);
-        createButtonOrganize(subHeaderPanel);
         add(subHeaderPanel, BorderLayout.NORTH);
     }
-    private void createButtonOrganize(JPanel panel){
-        button = new CustomButton("↑↓");
-        button.addActionListener(e -> {
-            if (button.getText().equals("↑↓")) {
-                button.setText("↓↑");
-            }
-            else {
-                button.setText("↑↓");
-            }
-            setData();
-        });
-        panel.add(button);
-    }
+
     private void createTitle(JPanel panel){
         JLabel title = new JLabel("Registros Por Ciudad: ");
         title.setFont(Global.FONT_TITLE_BIG);
@@ -73,17 +58,4 @@ public class WorkByNextVaccineAppointments extends JPanel {
         return new Dimension((int)width, (int)height);
     }
 
-    public void setData() {
-        presenter.getDataAndSetData();
-        Object[][] newData;
-        if (button.getText().equals("↑↓")) {
-            newData = presenter.obtainVisitsByCloseDueDate();
-        } else {
-            newData = presenter.obtainVisitsByLaterDueDate();
-        }
-        tableByDueDateVaccine.clearTable();
-        for (Object[] datum : newData) {
-            tableByDueDateVaccine.putData(datum);
-        }
-    }
 }

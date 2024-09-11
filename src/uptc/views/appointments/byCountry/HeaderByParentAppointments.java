@@ -51,7 +51,7 @@ public class HeaderByParentAppointments extends JPanel {
         this.add(headerLabelsPanel, BorderLayout.CENTER);
     }
     private void createLabelAddVaccines(){
-        JLabel label =  new LabelHeader("Registrar Cita");
+        JLabel label =  new LabelHeader("Analisis Por Vehiculo");
         label.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -68,7 +68,7 @@ public class HeaderByParentAppointments extends JPanel {
         this.add(titlePanel, BorderLayout.WEST);
     }
     private void createLblTitle(){
-        JLabel label = new JLabel("Veterinaria");
+        JLabel label = new JLabel("Analisis Geograficos");
         titlePanel.add(Box.createHorizontalStrut(50));
         label.setFont(Global.FONT_TITLE_NORMAL);
         label.setForeground(Global.HEADER_TEXT_COLOR);
