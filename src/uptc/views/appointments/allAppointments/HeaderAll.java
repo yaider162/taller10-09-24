@@ -13,14 +13,14 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class HeaderAllAppointments extends JPanel {
+public class HeaderAll extends JPanel {
     private JPanel headerLabelsPanel;
     private JPanel titlePanel;
     private final JDialog parent;
     private final MainPageFrame mainPageFrame;
     private final VetInterface.Presenter presenter;
 
-    public HeaderAllAppointments(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenter){
+    public HeaderAll(JDialog parent, MainPageFrame mainPageFrame, VetInterface.Presenter presenter){
         this.parent = parent;
         this.mainPageFrame = mainPageFrame;
         this.presenter = presenter;
