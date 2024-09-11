@@ -1,6 +1,6 @@
 package uptc.views.registerAppointmentVet;
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import lombok.Getter;
 import lombok.Setter;
 import uptc.views.wildCardClasses.CustomButton;

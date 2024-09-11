@@ -1,7 +1,7 @@
 package uptc.views.appointments.byParent;
 
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
 import uptc.views.appointments.byDate.MainByDateAppointments;
 import uptc.views.appointments.byNextVaccines.MainByNextVaccineAppointments;

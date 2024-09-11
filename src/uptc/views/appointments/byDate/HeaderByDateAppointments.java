@@ -1,6 +1,6 @@
 package uptc.views.appointments.byDate;
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.registerAppointmentVet.RegisterAppointmentMainPage;
 import uptc.views.wildCardClasses.Global;

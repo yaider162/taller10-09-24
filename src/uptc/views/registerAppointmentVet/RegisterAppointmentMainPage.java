@@ -1,9 +1,8 @@
 package uptc.views.registerAppointmentVet;
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import lombok.Setter;
 import uptc.views.mainpage.MainPageFrame;
-import uptc.views.wildCardClasses.CustomJComboBox;
 
 import javax.swing.*;
 import java.awt.*;

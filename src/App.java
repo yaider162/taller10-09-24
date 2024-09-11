@@ -1,4 +1,4 @@
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.presenter.Presenter;
 import uptc.views.mainpage.MainPageFrame;
 

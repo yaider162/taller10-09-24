@@ -2,7 +2,7 @@ package uptc.views.appointments.byParent;
 
 
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.mainpage.MainPageFrame;
 
 import javax.swing.*;

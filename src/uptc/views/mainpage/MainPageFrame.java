@@ -1,8 +1,6 @@
 package uptc.views.mainpage;
 
-
-
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,4 +1,4 @@
-package interfaces;
+package uptc.interfaces;
 
 public interface Interfaces {
     interface Model {

@@ -1,6 +1,6 @@
 package uptc.presenter;
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 
 public class Presenter implements Interfaces.Presenter {
     public Presenter() {

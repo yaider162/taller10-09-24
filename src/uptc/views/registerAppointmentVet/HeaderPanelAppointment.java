@@ -1,7 +1,7 @@
 package uptc.views.registerAppointmentVet;
 
 
-import interfaces.Interfaces;
+import uptc.interfaces.Interfaces;
 import uptc.views.appointments.allAppointments.MainAll;
 import uptc.views.mainpage.MainPageFrame;
 import uptc.views.wildCardClasses.CustomButton;
