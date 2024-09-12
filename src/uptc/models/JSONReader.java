@@ -27,6 +27,7 @@ public class JSONReader {
             String output;
             while ((output = br.readLine()) != null) {
                 jsonContent.append(output);
+                System.out.println(jsonContent);
             }
             conn.disconnect();
 
